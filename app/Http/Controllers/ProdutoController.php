@@ -25,4 +25,19 @@
 			return view("produtos/detalhes")->with("produto", $produto[0]);
 		}
 
+		public function criar() {
+			return view("produtos/formulario");
+		}
+		public function adcionar() {
+			$nome = Request::input('nome');
+  			$valor = Request::input('valor');
+  			$descricao = Request::input('descricao');
+  			$quantidade = Request::input('quantidade');
+
+			DB::insert('insert into produtos (nome, valor, descricao, quantidade) 
+    			values (?, ?, ?, ?)', array($nome, $valor, $descricao, $quantidade));
+
+  			return view('produto.adicionado')->with('nome', $nome);
+		}
+
 	}

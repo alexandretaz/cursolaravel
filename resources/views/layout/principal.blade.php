@@ -15,6 +15,7 @@
 
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/produtos">Listagem</a></li>
+        <li><a href="/produtos/criar">Novo Produto</a>
       </ul>
 
     </div>
